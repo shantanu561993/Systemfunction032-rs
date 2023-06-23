@@ -1,0 +1,23 @@
+[package]
+name = "Systemfunction032-rs"
+version = "0.1.0"
+edition = "2023"
+
+[profile.dev.package.dinvoke_rs]
+opt-level = 3
+debug = 2
+
+[dependencies]
+dinvoke = { path = "dinvoke" }
+manualmap = { path = "manualmap" }
+bindings = { path = "bindings" }
+data = { path = "data" }
+overload = { path = "overload" }
+dmanager = { path = "dmanager" }
+
+[build-dependencies]
+static_vcruntime = "2.0"
+
+[profile.release]
+strip = true  # Automatically strip symbols from the binary.
+opt-level = "z"
